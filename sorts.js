@@ -36,28 +36,33 @@ sorts.selectionSort = function(arr) {
 
 //INSERTION SORT
 sorts.insertionSort = function(arr) {
+	for (var i = 0; i < arr.length; i++) {
+		var right = i + 1;
+		var left = i;
+		while (arr[right] < arr[left] && left >= 0) {
+			var temp = arr[right];
+			arr[right] = arr[left];
+			arr[left] = temp;
+			left --;
+			right--;
+		}
+	}
 	return arr;
 };
 console.log(sorts.insertionSort(arr1));
 
-
 //QUICK SORT
 sorts.quickSort = function(arr) {
+
 	return arr;
 };
 // console.log(sorts.quickSort(arr1));
 
-
 //MERGE SORT
 sorts.mergeSort = function(arr) {
+
 	return arr;
 };
 // console.log(sorts.mergeSort(arr1));
-
-
-
-
-
-
 
 module.exports = sorts;
