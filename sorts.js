@@ -49,14 +49,15 @@ sorts.insertionSort = function(arr) {
 	}
 	return arr;
 };
-console.log(sorts.insertionSort(arr1));
+// console.log(sorts.insertionSort(arr1));
 
 //QUICK SORT
-sorts.quickSort = function(arr) {
-
+// sorts.quickSort = function(arr) {
+function quickSort(arr,l,h) {
 	return arr;
-};
+}
 // console.log(sorts.quickSort(arr1));
+// console.log(quickSort(arr1));
 
 //MERGE SORT
 sorts.mergeSort = function(arr) {
