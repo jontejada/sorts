@@ -1,4 +1,4 @@
-#JS implementations of (sorting algorithms)[https://en.wikipedia.org/wiki/Sorting_algorithm]
+#JS implementations of [sorting algorithms](https://en.wikipedia.org/wiki/Sorting_algorithm)
 
 ##bubble sort
 - O(n^2)
