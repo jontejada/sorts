@@ -1,4 +1,8 @@
-var sorts = {};
+var sorts = {},
+	arr1 = [5,6,3,2,1,4,0],
+	arr2 = [1,4,6,2,0,45,255];
+
+//BUBBLE SORT
 sorts.bubbleSort = function (arr){
 	for (var i = 0; i < arr.length; i++) {
 		for (var j = 0; j < arr.length - i - 1; j++) {
@@ -11,13 +15,10 @@ sorts.bubbleSort = function (arr){
 	}
 	return arr;
 };
+// console.log(sorts.bubbleSort(arr1));
 
-var arr1 = [1,4,6,2,0,45,255];
-console.log(sorts.bubbleSort(arr1));
-
-
-
-function selectionSort(arr) {
+//SELECTION SORT
+sorts.selectionSort = function(arr) {
 	for (var i = 0; i < arr.length; i++) {
 		var minAt = i;
 		for (var j = i; j < arr.length; j++) {
@@ -30,9 +31,32 @@ function selectionSort(arr) {
 		arr[minAt] = temp;
 	}
 	return arr;
-} 
+};
+// console.log(sorts.selectionSort(arr1));
 
-// console.log(selectionSort(arr1));
+//INSERTION SORT
+sorts.insertionSort = function(arr) {
+	return arr;
+};
+console.log(sorts.insertionSort(arr1));
+
+
+//QUICK SORT
+sorts.quickSort = function(arr) {
+	return arr;
+};
+// console.log(sorts.quickSort(arr1));
+
+
+//MERGE SORT
+sorts.mergeSort = function(arr) {
+	return arr;
+};
+// console.log(sorts.mergeSort(arr1));
+
+
+
+
 
 
 
