@@ -52,12 +52,56 @@ sorts.insertionSort = function(arr) {
 // console.log(sorts.insertionSort(arr1));
 
 //QUICK SORT
-// sorts.quickSort = function(arr) {
-function quickSort(arr,l,h) {
+// sorts.quickSort = function(arr,left,right) {
+function quickSort(arr,left,right) {
+	// if (!left) {
+	// 	left = 0;
+	// }
+	// if (!right) {
+	// 	right = arr.length - 1;
+	// }
+	// console.log(left);
+	var index;
+	if (arr.length > 1) {
+		index = partition(arr,left,right);
+		if (left < index - 1) {
+			quickSort(arr,left,index - 1);
+		}
+		if (index < right) {
+			quickSort(arr,index,right);
+		}
+	}
 	return arr;
-}
-// console.log(sorts.quickSort(arr1));
+};
+console.log(quickSort(arr1,0,arr1.length));
 // console.log(quickSort(arr1));
+
+function swap(arr, first, second) {
+	var temp = arr[first];
+	arr[first] = arr[second];
+	arr[second] = temp;
+}
+
+function partition(arr,left,right) {
+	var pivot = right,
+		i = left,
+		j = right;
+	while (i <= j) {
+		while (arr[i] < pivot) {
+			i++;
+		}
+		while (arr[j] > pivot) {
+			j--;
+		}
+		if (i < j) {
+			swap(arr,i,j);
+			i++;
+			j--;
+		}
+	}
+	return i;
+}
+
 
 //MERGE SORT
 sorts.mergeSort = function(arr) {
