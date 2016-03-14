@@ -54,25 +54,16 @@ sorts.insertionSort = function(arr) {
 //QUICK SORT
 // sorts.quickSort = function(arr,left,right) {
 function quickSort(arr,left,right) {
-	// if (!left) {
-	// 	left = 0;
-	// }
-	// if (!right) {
-	// 	right = arr.length - 1;
-	// }
-	// console.log(left);
-	var index;
-	if (arr.length > 1) {
-		index = partition(arr,left,right);
-		if (left < index - 1) {
-			quickSort(arr,left,index - 1);
-		}
-		if (index < right) {
-			quickSort(arr,index,right);
-		}
+	if (right > left) {
+		// console.log(arr);
+		var index = left;
+		var pivot = arr[index];
+		arr = partition(arr, pivot);
+		quickSort(arr,left, index - 1);
+		quickSort(arr,index + 1, right);
 	}
 	return arr;
-};
+}
 console.log(quickSort(arr1,0,arr1.length));
 // console.log(quickSort(arr1));
 
@@ -82,24 +73,15 @@ function swap(arr, first, second) {
 	arr[second] = temp;
 }
 
-function partition(arr,left,right) {
-	var pivot = right,
-		i = left,
-		j = right;
-	while (i <= j) {
-		while (arr[i] < pivot) {
-			i++;
-		}
-		while (arr[j] > pivot) {
-			j--;
-		}
-		if (i < j) {
+function partition(arr,pivot) {
+	var i = 0;
+	for (var j = 0; j < arr.length; j++) {
+		if (arr[j]!= pivot && arr[j] < pivot) {
 			swap(arr,i,j);
 			i++;
-			j--;
 		}
 	}
-	return i;
+	return arr;
 }
 
 
